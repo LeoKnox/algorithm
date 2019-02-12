@@ -1,0 +1,40 @@
+var arr1 = [1,1,3];
+var arr2 = [1,2,6];
+var arr3 = [1,1,3,5];
+var arr4 = [1,2,2,5,5];
+
+function union(arrone, arrtwo) {
+  var newarr = [];
+  for (var i = 0; i< arrtwo.length; i++) {
+    var add = 1;
+    for (var j = 0; j< arrone.length; j++) {
+      if (arrtwo[i]==arrone[j]) {
+        add = 0;
+      }
+    }
+    if (add) {
+      newarr.push(arrtwo[i]);
+    }
+  }
+  return (arrone.concat(newarr));
+}
+
+function intersect(arrone, arrtwo) {
+  var newarr = [];
+  for (var i = 0; i< arrtwo.length; i++) {
+    var add = 0;
+    for (var j = 0; j< arrone.length; j++) {
+      if (arrtwo[i]==arrone[j]) {
+        add = 1;
+      }
+    }
+    if (add) {
+      newarr.push(arrtwo[i]);
+    }
+  }
+  return (newarr);
+}
+// needs to remove duplicates
+console.log("multi-union: " + union(arr3, arr4));
+console.log("intersetion: " + intersect(arr1, arr2));
+console.log("union: " + union(arr1, arr2));
