@@ -1,0 +1,24 @@
+var arr=[6,5,9,2,7,8,3];
+var newone=[];
+var newtwo=[];
+
+function qs (narr) {
+if (narr.length == 1){
+  return (narr);
+}
+for (var i=1; i<narr.length; i++) {
+  if (narr[i]>narr[0]) {
+    newtwo.push(narr[i]);
+    console.log(newtwo);
+  } else {
+    newone.push(narr[i]);
+    console.log(newone);
+  }
+}
+  newone = qs(newone[0]);
+  newtwo = qs(newtwo[0]);
+  newone.push(narr[0]);
+  return(newone.concat(newtwo));
+}
+
+console.log(qs(arr));
